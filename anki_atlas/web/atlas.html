@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anki Atlas</title>
+  <link rel="stylesheet" href="atlas.css" />
+</head>
+<body>
+  <div id="atlas-app" class="atlas-app">
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="brand">Anki Atlas</div>
+        <select id="deck-select" class="top-select" title="Filter by deck"></select>
+        <div id="exam-pills" class="segmented" role="tablist" aria-label="Exam filter">
+          <button class="seg-btn active" data-exam="all" role="tab">All</button>
+          <button class="seg-btn" data-exam="step1" role="tab">Step 1</button>
+          <button class="seg-btn" data-exam="step2" role="tab">Step 2</button>
+        </div>
+        <div class="search-wrap">
+          <input id="search-input" type="search" placeholder="Search topics or cards (/)..." autocomplete="off" spellcheck="false" />
+          <div id="search-results" class="search-results hidden"></div>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <div id="view-pills" class="segmented" role="tablist" aria-label="View mode">
+          <button class="seg-btn active" data-view="grid" role="tab" title="Mastery Heatmap Grid (V)">Grid</button>
+          <button class="seg-btn" data-view="2d" role="tab" title="2D Topic Network (V)">2D</button>
+          <button class="seg-btn" data-view="3d" role="tab" title="3D Neural Network (V)">3D</button>
+        </div>
+        <select id="spotlight-select" class="top-select" title="Choose what topics or study states to highlight">
+          <option value="all">Show: Everything</option>
+          <option value="gaps">Suspended Gaps</option>
+          <option value="weak">Weak Cards</option>
+          <option value="recent_7d">Studied (7 Days)</option>
+          <option value="recent_30d">Studied (30 Days)</option>
+        </select>
+        <div id="overlay-wrap" class="overlay-wrap hidden">
+          <button id="btn-overlay-menu" class="top-select overlay-trigger" type="button" title="Highlight one or more tags or subdecks">Highlight Tags</button>
+          <div id="overlay-panel" class="overlay-panel hidden" role="menu"></div>
+        </div>
+        <button id="btn-concepts" class="pill-toggle active" title="Show TF-IDF concept links (dashed)">
+          <span class="dot dot-concept"></span>Concepts
+        </button>
+        <button id="btn-colorblind" class="pill-toggle" title="Toggle colorblind-safe Okabe-Ito palette">CB</button>
+        <button id="btn-fit" class="btn-icon" title="Fit view (0)">&#9635;</button>
+        <button id="btn-refresh" class="btn-icon" title="Rebuild from collection">&#8635;</button>
+      </div>
+    </header>
+
+    <main class="stage">
+      <canvas id="atlas-canvas"></canvas>
+      <div id="grid-view" class="grid-view hidden" aria-label="Mastery heatmap grid"></div>
+
+      <aside id="subject-dock" class="subject-dock" aria-label="Explorer">
+        <div class="dock-head">
+          <div class="dock-tabs">
+            <button id="tab-subjects" class="dock-tab active">Subjects</button>
+            <button id="tab-priority" class="dock-tab">Study Next</button>
+          </div>
+          <button id="btn-dock-toggle" class="dock-collapse" title="Collapse panel">&#8249;</button>
+        </div>
+        <div id="dock-list" class="subject-list"></div>
+      </aside>
+      <button id="btn-dock-open" class="dock-reopen hidden" title="Show panel">&#8250; Subjects</button>
+
+      <div id="focus-banner" class="focus-banner hidden">
+        <span id="focus-label"></span>
+        <div id="hop-pills" class="hop-pills hidden">
+          <button id="btn-hop-1" class="hop-btn active">1 hop</button>
+          <button id="btn-hop-2" class="hop-btn">2 hops</button>
+        </div>
+        <button id="btn-exit-focus" class="focus-exit">Full Network (Esc)</button>
+      </div>
+
+      <div id="hover-tip" class="hover-tip hidden"></div>
+
+      <div id="hud-legend" class="hud-legend">
+        <div class="legend-states" aria-label="Filter by card state">
+          <button class="state-chip" data-state="mature" title=">=70% mature"><i class="lg-dot s-mature"></i>Mature</button>
+          <button class="state-chip" data-state="young" title="Mostly young/learning"><i class="lg-dot s-young"></i>Young</button>
+          <button class="state-chip" data-state="new" title="Mostly new"><i class="lg-dot s-new"></i>New</button>
+          <button class="state-chip" data-state="mixed" title="Mixed progress"><i class="lg-dot s-mixed"></i>Mixed</button>
+          <button class="state-chip" data-state="suspended" title=">=70% suspended"><i class="lg-dot s-suspended"></i>Suspended</button>
+        </div>
+        <div id="hud-stats" class="hud-stats">Loading collection...</div>
+      </div>
+
+      <aside id="inspector" class="inspector hidden" aria-label="Topic inspector">
+        <div class="inspector-head">
+          <div class="inspector-titles">
+            <div id="ins-crumb" class="ins-crumb"></div>
+            <h2 id="ins-title" class="ins-title"></h2>
+          </div>
+          <button id="ins-close" class="btn-icon" title="Close (Esc)">&times;</button>
+        </div>
+        <div id="ins-body" class="inspector-body"></div>
+      </aside>
+
+      <div id="atlas-toast" class="atlas-toast hidden"></div>
+
+      <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+        <div id="loading-text">Mapping your Anki neural network...</div>
+      </div>
+    </main>
+  </div>
+  <script src="atlas.js"></script>
+</body>
+</html>

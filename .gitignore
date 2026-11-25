@@ -1,0 +1,11 @@
+backups/
+dist/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+meta.json
+user_files/
+anki_atlas/user_files/
+*.ankiaddon
+*.anki2*
