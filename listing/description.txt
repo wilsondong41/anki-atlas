@@ -1,25 +1,28 @@
-**Turn your Anki tags and decks into a visual Mastery Grid and interactive 2D/3D map.** Spot unfinished topics at a glance, search down to your deepest tags and card text, and launch focused Browser searches or cram sessions without touching your scheduling. Completely offline and read-only.
+**Turn your Anki tags and decks into an interactive 3D knowledge constellation and visual Mastery Grid.** See how topics connect across subjects, spot unfinished areas at a glance, search down to your deepest tags and card text, and launch focused Browser searches or cram sessions without touching your scheduling. Completely offline and read-only.
 
-<img src="https://raw.githubusercontent.com/wilsondong41/anki-atlas/main/listing/1-mastery-grid-overview.png" width="640" alt="Mastery Grid overview in Anki colors showing learned vs. suspended topics across subjects">
+<img src="https://raw.githubusercontent.com/wilsondong41/anki-atlas/main/listing/0-constellation-hero.png" width="640" alt="3D Knowledge Constellation showing glowing subject clusters and cross-topic links">
 
 ## What it does
 
-- **See the big picture in Grid view.** Every subject or top-level tag shows a breakdown of mature, young, new, and suspended cards alongside color-coded subtopic blocks, so yellow gaps jump right off the screen.
-- **Drill down without getting lost.** Click any block to zoom into its subtopics and open the side Inspector: one click for **Open Gaps**, one click for a non-rescheduling **Cram Deck**, quiet links for weak cards or high-yield gaps, and an expandable **Where missing cards live** breakdown.
+- **Explore connections & trace pathways in 2D and 3D.** See cards tagged across multiple topics (solid bridges) and local offline text similarity (dashed concept links), isolate any cluster, or trace step-by-step pathways between two subjects and build a Cram Deck straight from that path.
+
+<img src="https://raw.githubusercontent.com/wilsondong41/anki-atlas/main/listing/0b-pathway-connections.png" width="640" alt="Tracing a 3D shortest connection pathway between Heart Failure and Vitamin D with shared bridges">
+
+- **See the big picture in Grid view.** Switch anytime to Grid view: every subject or top-level tag shows a breakdown of mature, young, new, and suspended cards alongside color-coded subtopic blocks, so yellow gaps jump right off the screen.
+
+<img src="https://raw.githubusercontent.com/wilsondong41/anki-atlas/main/listing/1-mastery-grid-overview.png" width="640" alt="Mastery Grid overview in Anki colors showing learned vs. suspended topics across subjects">
+
+- **Drill down without getting lost.** Click any block or node to inspect subtopics: one click for **Open Gaps**, one click for a non-rescheduling **Cram Deck**, quiet links for weak cards or high-yield gaps, and an expandable **Where missing cards live** breakdown.
 
 <img src="https://raw.githubusercontent.com/wilsondong41/anki-atlas/main/listing/2-drilldown-and-inspector.png" width="640" alt="Drilled-in Cardiology view and calm two-button Topic Inspector">
 
-- **Search deep tags and card text together.** Press `/` and type any keyword to search across topic folders, deep nested tags (Level 4+), and card text at the same time — then jump to the topic on your map or open those exact cards in the Browser.
+- **Search deep tags and card text together.** Press `/` and type any keyword to search across topic folders, deep nested tags (Level 4+), and card text at the same time — then jump straight to the topic or open those exact cards in the Browser.
 
 <img src="https://raw.githubusercontent.com/wilsondong41/anki-atlas/main/listing/3-live-deep-search.png" width="640" alt="Live search matching deep Level 4 tags, topics, and cards simultaneously">
 
-- **Combine multiple tags or subdecks.** Open **Highlight Tags** and check more than one tag or subdeck together to spotlight matching topics across the grid and open combined `OR` queries in the Browser.
+- **Combine multiple tags or subdecks.** Open **Highlight Tags** and check more than one tag or subdeck together to spotlight matching topics across your map and open combined `OR` queries in the Browser.
 
 <img src="https://raw.githubusercontent.com/wilsondong41/anki-atlas/main/listing/4-multi-tag-highlight.png" width="640" alt="Multi-select Highlight Tags checkbox menu highlighting matching topics">
-
-- **Explore connections in 2D and 3D.** Switch from Grid to **2D** or **3D** to see cards tagged across multiple topics (solid bridges) and local offline text similarity (dashed concept links), isolate any cluster, or trace shortest paths between two topics.
-
-<img src="https://raw.githubusercontent.com/wilsondong41/anki-atlas/main/listing/5-3d-network-connections.png" width="640" alt="3D knowledge network showing cross-topic bridges and connected subjects">
 
 ## Works with any deck
 
@@ -38,7 +41,7 @@
 
 1. Install Anki Atlas and restart Anki.
 2. Click **Atlas** in the top toolbar (or press `Cmd+Shift+M` / `Ctrl+Shift+M`, or open **Tools → Anki Atlas**).
-3. Click any block to drill down, check tags under **Highlight Tags**, or press `/` to search cards and deep tags.
+3. Orbit or zoom the **3D** constellation, switch to **Grid** to hunt gaps fast, check filters under **Highlight Tags**, or press `/` to search everything.
 
 ## Good to know
 
