@@ -1,23 +1,51 @@
-Turn any Anki deck or nested tag tree into an interactive **Mastery Grid** and **2D/3D Knowledge Map** — find learning gaps fast, drill down to exact subtopics and deep tags, and build custom cram decks without touching your scheduling.
+**Turn your Anki tags and decks into a visual Mastery Grid and interactive 2D/3D map.** Spot unfinished topics at a glance, search down to your deepest tags and card text, and launch focused Browser searches or cram sessions without touching your scheduling. Completely offline and read-only.
 
-**Works with any Anki setup**
-- **Nested tags (`::`):** Automatically detects your tag hierarchy (languages, CS, law, sciences, custom study tags) and lets you filter cross-cutting tags alongside them.
-- **Subdecks & flat tags:** Falls back cleanly to your deck tree or tag groups when you don't use nested tags.
-- **Medical / AnKing support built in:** Automatically maps `#AK_Step1_v12` First Aid & `#AK_Step2_v12` Subjects across Step 1, Step 2, or unified All views, with optional cross-tag highlighting for Pathoma, Sketchy, Boards & Beyond, UWorld, AMBOSS, Bootcamp, and Pixorize.
+<img src="https://raw.githubusercontent.com/wilsondong41/anki-atlas/main/listing/1-mastery-grid-overview.png" width="640" alt="Mastery Grid overview in Anki colors showing learned vs. suspended topics across subjects">
 
-**What you can do inside Anki Atlas**
-- **Mastery Grid + 2D / 3D Map:** Switch between a fast proportional tile grid (click any block to drill down) and interactive 2D/3D topic networks.
-- **Multi-select Tag Highlighting:** Check multiple tags or subdecks together under **Highlight Tags** to see matching topics and open combined `OR` searches in the Browser.
-- **Live Deep Search (`/`):** Search across topic titles, deep level 4+ tags, and card text at once to jump straight to exact cards.
-- **Calm Topic Inspector:** Click any topic for **Open Gaps**, a non-rescheduling **Cram Deck**, quiet links for weak cards/all cards, expandable **Where missing cards live** breakdowns, and deep subtags.
-- **Shared Bridges & Concept Links:** Spot cards shared across multiple subjects or offline TF-IDF concept links between related cards, and trace shortest pathways between any two topics.
-- **Anki Colors + Colorblind Mode (`CB`):** Uses Anki's card-state colors (dark green mature, light green young, blue new, yellow suspended) with a one-click Okabe-Ito colorblind-safe mode that updates the map, grid, inspector, and bottom legend together.
+## What it does
 
-**Privacy & safety**
-- **100% offline:** Zero external servers, CDNs, or API calls.
-- **Read-only on your cards:** Never edits notes, tags, or review history. **Cram Deck** creates a separate non-rescheduling filtered deck (`resched=False`).
-- **Open Anki Atlas** from the top toolbar (**Atlas**), **Tools → Anki Atlas**, or `Ctrl+Shift+M` (`Cmd+Shift+M` on Mac).
+- **See the big picture in Grid view.** Every subject or top-level tag shows a breakdown of mature, young, new, and suspended cards alongside color-coded subtopic blocks, so yellow gaps jump right off the screen.
+- **Drill down without getting lost.** Click any block to zoom into its subtopics and open the side Inspector: one click for **Open Gaps**, one click for a non-rescheduling **Cram Deck**, quiet links for weak cards or high-yield gaps, and an expandable **Where missing cards live** breakdown.
 
-**Source & Support:** https://github.com/wilsondong41/anki-atlas/issues
+<img src="https://raw.githubusercontent.com/wilsondong41/anki-atlas/main/listing/2-drilldown-and-inspector.png" width="640" alt="Drilled-in Cardiology view and calm two-button Topic Inspector">
+
+- **Search deep tags and card text together.** Press `/` and type any keyword to search across topic folders, deep nested tags (Level 4+), and card text at the same time — then jump to the topic on your map or open those exact cards in the Browser.
+
+<img src="https://raw.githubusercontent.com/wilsondong41/anki-atlas/main/listing/3-live-deep-search.png" width="640" alt="Live search matching deep Level 4 tags, topics, and cards simultaneously">
+
+- **Combine multiple tags or subdecks.** Open **Highlight Tags** and check more than one tag or subdeck together to spotlight matching topics across the grid and open combined `OR` queries in the Browser.
+
+<img src="https://raw.githubusercontent.com/wilsondong41/anki-atlas/main/listing/4-multi-tag-highlight.png" width="640" alt="Multi-select Highlight Tags checkbox menu highlighting matching topics">
+
+- **Explore connections in 2D and 3D.** Switch from Grid to **2D** or **3D** to see cards tagged across multiple topics (solid bridges) and local offline text similarity (dashed concept links), isolate any cluster, or trace shortest paths between two topics.
+
+<img src="https://raw.githubusercontent.com/wilsondong41/anki-atlas/main/listing/5-3d-network-connections.png" width="640" alt="3D knowledge network showing cross-topic bridges and connected subjects">
+
+## Works with any deck
+
+- **Nested tags (`::`), flat tags, or subdecks.** Automatically maps your tag tree (languages, computer science, law, sciences, personal study decks) and detects cross-cutting tags as checkboxes in **Highlight Tags**.
+- **AnKing Step 1 & Step 2 built in.** Automatically organizes `#AK_Step1_v12` First Aid and `#AK_Step2_v12` Subjects across Step 1, Step 2, or unified All views, with optional resource checkboxes for Pathoma, Sketchy, Boards & Beyond, UWorld, AMBOSS, Bootcamp, and Pixorize.
+
+<img src="https://raw.githubusercontent.com/wilsondong41/anki-atlas/main/listing/6-non-anking-nested-tags.png" width="640" alt="Universal nested-tag support on a non-medical deck with auto-detected tag filters">
+
+## Accessible colors
+
+- **Anki colors + Colorblind mode (`CB`).** Uses Anki's card-state colors (dark green mature, light green young, blue new, yellow suspended) with a one-click Okabe-Ito colorblind-safe mode that updates tiles, graph nodes, inspector indicators, and the bottom legend together.
+
+<img src="https://raw.githubusercontent.com/wilsondong41/anki-atlas/main/listing/7-colorblind-mode.png" width="640" alt="Okabe-Ito colorblind mode updating tiles, dock dots, and bottom legend together">
+
+## Getting started
+
+1. Install Anki Atlas and restart Anki.
+2. Click **Atlas** in the top toolbar (or press `Cmd+Shift+M` / `Ctrl+Shift+M`, or open **Tools → Anki Atlas**).
+3. Click any block to drill down, check tags under **Highlight Tags**, or press `/` to search cards and deep tags.
+
+## Good to know
+
+- **100% offline.** Zero servers, accounts, CDNs, or external API calls.
+- **Strictly read-only on your cards.** Atlas never edits your notes, tags, or review history. **Cram Deck** builds a separate non-rescheduling filtered deck (`resched=False`) and brings Anki's main window forward to study it.
+- **Three clean levels on the map, deep tags one click inside.** The overview stays fast and readable at Levels 1–3, while clicking any leaf topic reveals **Specific Tags Inside** (Level 4+) and search hits everything.
 
 **COMPLETELY VIBED CODED WITH CLAUDE AI, THE GOAT.**
+
+**This is a beta.** Setups and tag trees vary a lot. If something looks off or doesn't map your deck cleanly, please report it on [GitHub Issues](https://github.com/wilsondong41/anki-atlas/issues) rather than leaving a low rating so I can fix it.
